@@ -34,9 +34,9 @@ class UserSeeder extends Seeder
         // Member
         User::create([
             'name' => 'Member User',
-            'email' => 'member@example.com',
+            'email' => 'user@example.com',
             'password' => Hash::make('password'),
-            'role_id' => $roles['member'],
+            'role_id' => $roles['user'],
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);

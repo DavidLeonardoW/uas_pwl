@@ -3428,15 +3428,15 @@
       index: function (element) {
         return this.members.indexOf(element)
       },
-      // Get member at given index
+      // Get user at given index
       get: function (i) {
         return this.members[i]
       },
-      // Get first member
+      // Get first user
       first: function () {
         return this.get(0)
       },
-      // Get last member
+      // Get last user
       last: function () {
         return this.get(this.members.length - 1)
       },
