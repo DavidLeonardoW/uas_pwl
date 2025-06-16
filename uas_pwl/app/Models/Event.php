@@ -11,6 +11,7 @@ class Event extends Model
 
     protected $fillable = [
         'name',
+        'description',
         'date',
         'time',
         'location',
@@ -18,8 +19,14 @@ class Event extends Model
         'poster',
         'registration_fee',
         'max_participants',
-        'status',
+        'created_by',
+        'status'
     ];
+
+    public function created_by()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 
     public function registrations()
     {

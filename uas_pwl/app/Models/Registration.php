@@ -10,13 +10,15 @@ class Registration extends Model
 {
     use HasFactory;
 
+     protected $table = 'event_registrations';
+
     protected $fillable = [
         'user_id',
         'event_id',
-        'payment_proof',
         'payment_status',
-        're_registration_status',
-        'qr_code',
+        'proof_of_payment_path',
+        'qr_code_path',
+        'is_checked_in',
     ];
 
     public function user()

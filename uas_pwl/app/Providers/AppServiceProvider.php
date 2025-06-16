@@ -2,10 +2,16 @@
 
 namespace App\Providers;
 
+use App\Models\Event;
+use App\Policies\EventPolicy;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    protected $policies = [
+        Event::class => EventPolicy::class,
+    ];
+
     /**
      * Register any application services.
      */

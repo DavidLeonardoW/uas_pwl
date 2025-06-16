@@ -22,19 +22,62 @@
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link justify-content-between"
-                       href="{{ route('user.index') }}"
-                       aria-expanded="false">
-                        <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <i class="ti ti-user-circle"></i>
-                  </span>
-                            <span class="hide-menu">User</span>
-                        </div>
-
-                    </a>
-                </li>
+                @switch(auth()->user()->role_id)
+                    @case(1)
+                        <li class="sidebar-item">
+                            <a class="sidebar-link justify-content-between"
+                               href="{{ route('event.all') }}"
+                               aria-expanded="false">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="d-flex">
+                                <i class="ti ti-speakerphone"></i>
+                                </span>
+                                    <span class="hide-menu">Event</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link justify-content-between"
+                               href="{{ route('event.history') }}"
+                               aria-expanded="false">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="d-flex">
+                                <i class="ti ti-calendar-stats"></i>
+                                </span>
+                                    <span class="hide-menu">History</span>
+                                </div>
+                            </a>
+                        </li>
+                        @break
+                    @case(2)
+                        <li class="sidebar-item">
+                            <a class="sidebar-link justify-content-between"
+                               href="{{ route('user.index') }}"
+                               aria-expanded="false">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="d-flex">
+                                <i class="ti ti-user-circle"></i>
+                                </span>
+                                    <span class="hide-menu">User</span>
+                                </div>
+                            </a>
+                        </li>
+                        @break
+                    @case(3)
+                        <li class="sidebar-item">
+                            <a class="sidebar-link justify-content-between"
+                               href="{{ route('event.index') }}"
+                               aria-expanded="false">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="d-flex">
+                                <i class="ti ti-speakerphone"></i>
+                                </span>
+                                    <span class="hide-menu">Event</span>
+                                </div>
+                            </a>
+                        </li>
+                        @break
+                @endswitch
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

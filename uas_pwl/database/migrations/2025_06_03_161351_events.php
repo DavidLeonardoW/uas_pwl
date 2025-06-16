@@ -12,17 +12,17 @@ return new class extends Migration {
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
+            $table->string('name');
+            $table->text('description');
             $table->date('date');
             $table->time('time');
             $table->string('location');
-            $table->string('speaker')->nullable();
-            $table->string('poster_path')->nullable();
+            $table->string('speaker');
+            $table->string('poster');
             $table->decimal('registration_fee', 10, 2)->default(0.00);
-            $table->integer('max_participants')->nullable();
+            $table->integer('max_participants');
             $table->foreignId('created_by')->constrained('users')->cascadeOnDelete();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'pass'])->default('active');
             $table->timestamps();
         });
     }

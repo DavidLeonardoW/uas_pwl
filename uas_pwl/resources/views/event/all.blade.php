@@ -8,9 +8,9 @@
                 <div class="card-body">
                     <div class="d-md-flex align-items-center">
                         <div>
-                            <h4 class="card-title">Welcome {{ Auth::user()->name }}!</h4>
+                            <h4 class="card-title">Incoming Event!</h4>
                             <p class="card-subtitle">
-                                Event Terbaru!
+                                Event yang Akan Segera Datang!
                             </p>
                         </div>
                     </div>

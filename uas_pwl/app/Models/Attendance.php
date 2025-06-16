@@ -10,9 +10,8 @@ class Attendance extends Model
     use HasFactory;
 
     protected $fillable = [
-        'registration_id',
-        'scanned_by_user_id',
-        'attendance_time',
+        'event_registration_id',
+        'checked_in_at',
     ];
 
     public function registration()

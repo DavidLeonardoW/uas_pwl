@@ -48,11 +48,18 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Relasi ke role
-     */
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+     public function eventRegistrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
+
+    public function eventsCreated()
+    {
+        return $this->hasMany(Event::class, 'created_by');
     }
 }
